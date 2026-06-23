@@ -1,0 +1,25 @@
+#!/usr/bin/expect -f
+set timeout -1
+spawn netlify init
+
+expect "? What would you like to do?"
+send "\033\[B\r"
+
+expect -re "\\? Team:|\\? Project name"
+if {[string match "*Team:*" $expect_out(0,string)]} {
+    send "\r"
+    expect -re "\\? Project name"
+}
+send "stival-assessoria-oficial\r"
+
+expect -re "\\? Base directory|\\? Your build command"
+if {[string match "*Base directory*" $expect_out(0,string)]} {
+    send "\r"
+    expect -re "\\? Your build command"
+}
+send "\r"
+
+expect "? Directory to deploy"
+send "\r"
+
+expect eof

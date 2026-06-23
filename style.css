@@ -69,10 +69,13 @@ body {
 }
 
 .brand {
+    position: absolute;
+    top: 2.5rem;
+    left: 10%;
+    z-index: 10;
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 4rem;
     color: var(--color-white);
     font-family: var(--font-heading);
     font-weight: 700;
@@ -960,7 +963,7 @@ body {
     .stat-number, .metric-number-wrapper { font-size: 3rem; }
     
     /* Adequação de layout flex e grid */
-    .brand { flex-direction: column; align-items: flex-start; gap: 0.5rem; margin-bottom: 3rem; }
+    .brand { position: absolute; top: 1.5rem; left: 5%; flex-direction: row; margin-bottom: 0; gap: 0.5rem; align-items: flex-start; }
     .btn-primary { width: 100%; text-align: center; justify-content: center; }
     
     .bento-card { padding: 3.5rem 1.5rem 1.5rem; }

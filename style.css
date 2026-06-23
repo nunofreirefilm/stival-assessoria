@@ -33,7 +33,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 4rem 10%;
+    padding: 12rem 10% 4rem;
     overflow: hidden;
     background-color: var(--color-blue);
 }
@@ -931,7 +931,7 @@ body {
     }
     
     /* Respiros proporcionais e confortáveis para não criar rolagem infinita */
-    .hero { min-height: auto; padding: 7rem 5% 4rem; }
+    .hero { min-height: auto; padding: 8rem 5% 4rem; }
     .problem-section { padding: 4rem 5%; gap: 2rem; }
     .solution-section { padding: 4rem 5%; }
     .services-section { padding: 3rem 5%; }

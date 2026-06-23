@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stival Assessoria Empresarial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" as="image" media="(min-width: 769px)">
+    <link rel="preload" href="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=60&w=800&auto=format&fit=crop" as="image" media="(max-width: 768px)">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+    <style>
+:root {
+    --color-blue: #0A192F;
+    --color-blue-light: #112B52;
+    --color-blue-text: #1C3661;
+    --color-yellow: #FFC700;
+    --color-yellow-hover: #E5B300;
+    --color-white: #FFFFFF;
+    --color-bg: #FAFAFA;
+    --color-text: #4A5568;
+    
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+a { top: 71%; left: 56%; }
+a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: all 0.3s ease; display: inline-block; }
+a { color: var(--color-white); text-decoration: none; font-size: 1.05rem; font-weight: 500; transition: color 0.3s ease; }
+a { color: rgba(255, 255, 255, 0.5); text-decoration: none; transition: color 0.3s ease; }
+.text-yellow {
+    color: var(--color-yellow);
+}
+.weight-light {
+    font-weight: 200;
+}
+.weight-bold {
+    font-weight: 700;
+}
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 10%;
+    overflow: hidden;
+    background-color: var(--color-blue);
+}
+.hero {
+        padding: 4rem 5%;
+    }
+.hero { min-height: auto; padding: 7rem 5% 4rem; }
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px) grayscale(50%);
+    opacity: 0.3;
+    z-index: 1;
+}
+.hero-background {
+        background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=60&w=800&auto=format&fit=crop');
+    }
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(10, 25, 47, 0.8) 100%);
+    z-index: 2;
+}
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.brand { flex-direction: column; align-items: flex-start; gap: 0.5rem; margin-bottom: 3rem; }
+.hero-title {
+    font-family: var(--font-heading);
+    color: var(--color-white);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+.hero-title { font-size: 2.2rem; }
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    max-width: 600px;
+    margin-bottom: 3.5rem;
+    font-weight: 300;
+}
+.hero-subtitle { font-size: 1rem; margin-bottom: 2rem; }
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-yellow);
+    color: var(--color-blue);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+.btn-primary { width: 100%; text-align: center; justify-content: center; }
+.btn-primary:hover {
+    background-color: var(--color-yellow-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+  .hero-background { background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=60&w=800&auto=format&fit=crop'); }
+  .hero { min-height: auto; padding: 7rem 5% 4rem; }
+  .hero-title { font-size: clamp(2rem, 10vw, 2.5rem); }
+  .hero-subtitle { font-size: 1rem; }
+}
+</style>
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section: Minimal + Single Focus -->
+    <header id="inicio" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="brand">
+                <img src="/.netlify/images?url=/images/logo_1.png&w=250&q=100" alt="Stival Assessoria Empresarial" class="brand-logo" width="180" height="42" loading="eager" fetchpriority="high">
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="weight-light">Transformamos</span><br>
+                <span class="weight-bold text-yellow">oportunidades tributárias</span><br>
+                <span class="weight-light">em economia e segurança.</span>
+            </h1>
+            
+            <p class="hero-subtitle">Reduza custos, recupere créditos e organize sua gestão tributária com inteligência, transparência e embasamento técnico.</p>
+            
+            <a href="#analise" class="btn-primary">Quero solicitar uma análise</a>
+        </div>
+    </header>
+
+    <!-- Section 2: O Problema - Split Asymmetric (60/40) -->
+    <section class="section problem-section">
+        <div class="problem-content" data-aos="fade-up">
+            <h2 class="section-title">Sua empresa pode estar <span class="text-blue">perdendo dinheiro</span> agora.</h2>
+            <p class="section-text">Toda empresa possui desafios fiscais e operacionais. Muitas vezes, esses desafios geram custos desnecessários, riscos tributários e perda de oportunidades de recuperação de valores cruciais para o seu fluxo de caixa.</p>
+        </div>
+        <div class="problem-visual" data-aos="fade-up" data-aos-delay="100">
+            <div class="visual-card">
+                <div class="stat-number">R$</div>
+                <div class="stat-desc">Valores cruciais esquecidos no fluxo de caixa</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: A Solução -->
+    <section id="solucao" class="section solution-section">
+        <div class="solution-spheres">
+            <div class="sphere sphere-left"></div>
+            <div class="sphere sphere-right"></div>
+        </div>
+        <div class="solution-content" data-aos="fade-up">
+            <h2 class="solution-title">Crescimento com controle e segurança</h2>
+            <p class="solution-text">Auxiliamos empresas a melhorarem suas gestões e minimizarem desperdícios. Nossa atuação combina análise técnica rigorosa com visão estratégica para criar caminhos seguros na sua tomada de decisão.</p>
+        </div>
+    </section>
+
+    <!-- Section 4: Nossos Serviços -->
+    <section id="servicos" class="section services-section">
+        <h2 class="services-main-title" data-aos="fade-up">O que fazemos pela sua empresa</h2>
+        <div class="bento-grid">
+            <!-- Card 1 -->
+            <div class="bento-card bento-large highlight-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="ph ph-trend-up bento-icon"></i>
+                <h3 class="bento-title">Planejamento Tributário</h3>
+                <p class="bento-text">Pague apenas o que é devido, evite riscos e torne sua operação mais eficiente.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bento-card bento-large highlight-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="ph ph-currency-circle-dollar bento-icon"></i>
+                <h3 class="bento-title">Recuperação de Tributos</h3>
+                <p class="bento-text">Resgate seguro de créditos pagos indevidamente, gerando recursos para o caixa.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bento-card bento-medium" data-aos="fade-up" data-aos-delay="300">
+                <i class="ph ph-magnifying-glass bento-icon"></i>
+                <h3 class="bento-title">Consultoria Tributária</h3>
+                <p class="bento-text">Revisão detalhada de processos e correção de inconsistências fiscais.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="bento-card bento-medium" data-aos="fade-up" data-aos-delay="400">
+                <i class="ph ph-briefcase bento-icon"></i>
+                <h3 class="bento-title">Assessoria Empresarial</h3>
+                <p class="bento-text">Apoio na organização financeira, fluxo de caixa e aumento de produtividade.</p>
+            </div>
+            <!-- Card 5 -->
+            <div class="bento-card bento-small" data-aos="fade-up" data-aos-delay="500">
+                <i class="ph ph-plant bento-icon"></i>
+                <h3 class="bento-title">Assessoria no Agronegócio</h3>
+                <p class="bento-text">Otimização tributária e recuperação de créditos focada no produtor rural.</p>
+            </div>
+            <!-- Card 6 -->
+            <div class="bento-card bento-small" data-aos="fade-up" data-aos-delay="600">
+                <i class="ph ph-arrows-left-right bento-icon"></i>
+                <h3 class="bento-title">Compra e Venda de Créditos</h3>
+                <p class="bento-text">Viabilidade e segurança jurídica na negociação de créditos tributários.</p>
+            </div>
+            <!-- Card 7 -->
+            <div class="bento-card bento-long" data-aos="fade-up" data-aos-delay="700">
+                <i class="ph ph-trademark bento-icon"></i>
+                <h3 class="bento-title">Registro de Marcas e Patentes</h3>
+                <p class="bento-text">Proteção do seu patrimônio intelectual, marcas e softwares junto ao INPI.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Frentes de Atuação -->
+    <section id="frentes" class="section solutions-frentes-section">
+        <div class="frentes-container">
+            <div class="frentes-left">
+                <h2 class="frentes-title">Soluções<br><span class="text-stroke">Especializadas</span><br>Completas</h2>
+            </div>
+            <div class="frentes-right">
+                <ul class="frentes-list">
+                    <li data-aos="fade-up" data-aos-delay="100"><i class="ph ph-check text-yellow"></i> Revisão fiscal e reforma tributária</li>
+                    <li data-aos="fade-up" data-aos-delay="200"><i class="ph ph-check text-yellow"></i> Auditoria de folha focada no eSocial</li>
+                    <li data-aos="fade-up" data-aos-delay="300"><i class="ph ph-check text-yellow"></i> Planejamento e proteção patrimonial</li>
+                    <li data-aos="fade-up" data-aos-delay="400"><i class="ph ph-check text-yellow"></i> Recuperação de INSS, PIS, COFINS e ICMS</li>
+                    <li data-aos="fade-up" data-aos-delay="500"><i class="ph ph-check text-yellow"></i> Subvenção de investimentos e Lei do Bem</li>
+                    <li data-aos="fade-up" data-aos-delay="600"><i class="ph ph-check text-yellow"></i> BPO financeiro e revisão de processos</li>
+                    <li data-aos="fade-up" data-aos-delay="700"><i class="ph ph-check text-yellow"></i> Soluções exclusivas para construção civil e agronegócio</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Prova Social (Números) -->
+    <section class="section metrics-section">
+        <div class="metrics-container">
+            <div class="metrics-left" data-aos="fade-up">
+                <h2 class="metrics-title">Por que confiar na STIVAL?</h2>
+                <p class="metrics-text">Equipe técnica especializada e transparência absoluta.</p>
+            </div>
+            <div class="metrics-right">
+                <div class="metric-item">
+                    <div class="metric-number-wrapper"><span class="metric-plus">+</span><span class="counter-element" data-target="5">0</span></div>
+                    <div class="metric-label">anos de atuação prática</div>
+                    <div class="metric-divider"></div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number-wrapper"><span class="metric-plus">+</span><span class="counter-element" data-target="1000">0</span></div>
+                    <div class="metric-label">projetos entregues com sucesso</div>
+                    <div class="metric-divider"></div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number-wrapper">Centenas</div>
+                    <div class="metric-label">de clientes atendidos</div>
+                    <div class="metric-divider"></div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number-wrapper">Milhões</div>
+                    <div class="metric-label">recuperados</div>
+                    <div class="metric-divider"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Como Funciona -->
+    <section class="section process-section">
+        <div class="process-container">
+            <h2 class="process-main-title" data-aos="fade-up">Processo prático e focado em resultados</h2>
+            
+            <div class="timeline-wrapper">
+                <div class="timeline-line">
+                    <div class="timeline-progress"></div>
+                </div>
+                
+                <div class="timeline-step step-left" data-aos="fade-up">
+                    <div class="step-dot">1</div>
+                    <div class="step-card">
+                        <h3 class="step-title">Diagnóstico inicial</h3>
+                        <p class="step-text">Compreendemos sua realidade e desafios fiscais</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step step-right" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-dot">2</div>
+                    <div class="step-card">
+                        <h3 class="step-title">Análise técnica</h3>
+                        <p class="step-text">Avaliamos documentos e oportunidades de economia</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step step-left" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-dot">3</div>
+                    <div class="step-card">
+                        <h3 class="step-title">Apresentação das oportunidades</h3>
+                        <p class="step-text">Mostramos caminhos claros e benefícios esperados</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step step-right" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-dot">4</div>
+                    <div class="step-card">
+                        <h3 class="step-title">Execução do projeto</h3>
+                        <p class="step-text">Conduzimos todas as etapas técnicas e jurídicas</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step step-left" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-dot">5</div>
+                    <div class="step-card">
+                        <h3 class="step-title">Acompanhamento</h3>
+                        <p class="step-text">Garantimos suporte e transparência contínua</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Onde Estamos -->
+    <section class="section location-section">
+        <div class="location-grid">
+            <div class="location-text-block" data-aos="fade-up">
+                <h2 class="location-title">Atendimento em todo o Brasil</h2>
+                <p class="location-text">Contamos com unidades próprias em São Luís (Maranhão) e Curitiba (Paraná), além de uma rede de escritórios parceiros para levar soluções estratégicas a empresas de todas as regiões do país.</p>
+            </div>
+            <div class="location-map-block">
+                <div class="map-container">
+                    <img src="/.netlify/images?url=/images/mapa_brasil_abstract.png&w=800&q=80" alt="Mapa do Brasil" class="map-image" width="800" height="800" loading="lazy">
+                    <div class="abstract-map-overlay" style="position: absolute; top:0; left:0; width:100%; height:100%;">
+                        <div class="map-pin pin-saoluis"></div>
+                        <div class="map-pin pin-curitiba"></div>
+                        <div class="map-pin pin-partner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 9: CTA Final -->
+    <section id="analise" class="section cta-section">
+        <div class="cta-spotlight"></div>
+        <div class="cta-content -scale" data-aos="zoom-in">
+            <h2 class="cta-title">Descubra como sua empresa pode economizar com segurança</h2>
+            <p class="cta-text">Quer saber se a sua empresa possui créditos a recuperar ou oportunidades reais de redução de custos? Solicite uma análise da nossa equipe técnica.</p>
+            <a href="#" class="btn-primary btn-pulse">Falar com um consultor</a>
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="/.netlify/images?url=/images/logo_1.png&w=250&q=100" alt="Stival Assessoria Empresarial" class="brand-logo" width="180" height="42" loading="lazy">
+                </div>
+                <p class="footer-desc">Transformamos oportunidades tributárias em economia e segurança jurídica para o seu negócio.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="ph-fill ph-instagram-logo"></i></a>
+                    <a href="#" class="social-icon"><i class="ph-fill ph-linkedin-logo"></i></a>
+                    <a href="#" class="social-icon"><i class="ph-fill ph-facebook-logo"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col links-col">
+                <h4 class="footer-col-title">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#solucao">A Solução</a></li>
+                    <li><a href="#servicos">Nossos Serviços</a></li>
+                    <li><a href="#frentes">Frentes de Atuação</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col contact-col">
+                <h4 class="footer-col-title">Fale Conosco</h4>
+                <ul class="footer-contact-list">
+                    <li>
+                        <div class="contact-icon-box"><i class="ph-fill ph-whatsapp-logo"></i></div>
+                        <div class="contact-text">
+                            <span class="contact-label">WhatsApp</span>
+                            <a href="https://wa.me/5541999775058" target="_blank">+55 41 99977-5058</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon-box"><i class="ph-fill ph-phone"></i></div>
+                        <div class="contact-text">
+                            <span class="contact-label">Telefone Fixo</span>
+                            <a href="tel:+554137972153">+55 41 3797-2153</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon-box"><i class="ph-fill ph-envelope-simple"></i></div>
+                        <div class="contact-text">
+                            <span class="contact-label">E-mail</span>
+                            <a href="mailto:stivalassessoriaeconsultoria@gmail.com">stivalassessoriaeconsultoria@gmail.com</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 STIVAL Assessoria e Consultoria. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animations and Interactions
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // Counters Animation
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const endVal = parseInt(target.getAttribute('data-target'));
+                        if(!isNaN(endVal)) {
+                            animateValue(target, 0, endVal, 2500);
+                        }
+                        counterObserver.unobserve(target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.counter-element').forEach((el) => {
+                counterObserver.observe(el);
+            });
+
+            // Metric dividers animation
+            const dividerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        dividerObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.metric-divider').forEach((el) => {
+                dividerObserver.observe(el);
+            });
+
+            // Timeline Scroll Animation
+            const timelineLine = document.querySelector('.timeline-progress');
+            const timelineWrapper = document.querySelector('.timeline-wrapper');
+            
+            if(timelineWrapper && timelineLine) {
+                window.addEventListener('scroll', () => {
+                    const wrapperRect = timelineWrapper.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    
+                    if (wrapperRect.top < windowHeight * 0.8 && wrapperRect.bottom > 0) {
+                        const totalHeight = wrapperRect.height;
+                        const scrolled = windowHeight * 0.8 - wrapperRect.top;
+                        
+                        let progress = (scrolled / totalHeight) * 100;
+                        progress = Math.max(0, Math.min(100, progress));
+                        
+                        timelineLine.style.height = progress + '%';
+
+                        document.querySelectorAll('.timeline-step').forEach(step => {
+                            const stepRect = step.getBoundingClientRect();
+                            if (stepRect.top < windowHeight * 0.7) {
+                                step.querySelector('.step-dot').classList.add('is-active');
+                            }
+                        });
+                    }
+                }, { passive: true });
+            }
+
+            function animateValue(obj, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const easeOut = 1 - Math.pow(1 - progress, 4);
+                    obj.innerHTML = Math.floor(easeOut * (end - start) + start);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        obj.innerHTML = end;
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            AOS.init({
+                disableMutationObserver: true,
+                once: true,
+                duration: 800
+            });
+        });
+    </script>
+</body>
+</html>

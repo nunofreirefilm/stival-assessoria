@@ -140,7 +140,7 @@ body {
 .problem-section {
     padding: 8rem 10%;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
     gap: 6rem;
     align-items: center;
     background-color: var(--color-bg);
@@ -191,11 +191,13 @@ body {
 
 .stat-number {
     font-family: var(--font-heading);
-    font-size: 5rem;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
     font-weight: 700;
     color: var(--color-blue);
     line-height: 1;
     margin-bottom: 1rem;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
 }
 
 .stat-desc {
@@ -237,7 +239,7 @@ body {
 /* ================= SECTION 3: A SOLUÇÃO ================= */
 .solution-section {
     position: relative;
-    padding: 10rem 10%;
+    padding: 10rem 10% 4rem;
     background-color: var(--color-blue);
     display: flex;
     flex-direction: column;
@@ -302,6 +304,115 @@ body {
     font-size: 1.25rem;
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
+}
+
+/* ================= SECTION: QUEM SOMOS ================= */
+.about-section {
+    padding: 4rem 5% 8rem;
+    background-color: var(--color-blue);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-main-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-white);
+    margin-bottom: 4rem;
+    position: relative;
+    display: inline-block;
+}
+
+.about-main-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-yellow);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.about-card {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 3rem;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.about-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.about-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--color-yellow);
+}
+
+.about-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.about-values-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.about-values-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.value-name {
+    color: var(--color-yellow);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.value-desc {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+    padding-left: 1rem;
+}
+
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-card {
+        padding: 2rem;
+    }
 }
 
 /* ================= SECTION 4: NOSSOS SERVIÇOS ================= */
